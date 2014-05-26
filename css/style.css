@@ -1,0 +1,457 @@
+@charset="utf-8";
+/*************header*************/
+.header{height:60px;background:#fff;border-bottom:1px solid #c8c8c8;}
+.header .wrap{margin:0 auto;line-height:60px;}
+.header .logo{margin-top:17px;}
+.nav-menu li{width:100px;}
+li.current a{color:#3ab4a6;}
+/**************问答库****************/
+/*form*/
+form.search{
+	padding:8px;
+	background:#f0f0f0;
+}
+form input[type="text"]{
+	width:264px;
+	border:0;
+	height:32px;
+	line-height:32px;
+	background:#fff;
+	padding:0 9px;
+	color:rgba(90,90,90,.5);
+	border-radius:10px;
+}
+/*ques list*/
+#ques{
+	height: 660px;
+	overflow-y: scroll;
+}
+#ques::-webkit-scrollbar {
+    width: 0px;
+}
+.box.qa.small{
+	border-right:0;
+	height:712px;
+
+}
+.box.qa.big{
+	padding-bottom:20px;
+}
+.hidden{
+	display:none;	
+}
+.intro{
+    padding-bottom:5px;
+    padding-top:14px;
+    border-bottom:1px solid #ddd;
+    color:#969696;
+}
+#ques li{
+    padding:0 20px;
+    border-bottom:1px solid #ccc;
+}
+#ques li:last-child{
+	border-bottom:0;
+}
+.ques-title{
+    padding:17px 0;
+}
+.ques-title  a{
+	font-size:14px;
+	background: transparent;
+}
+/*answer section*/
+.sec-title,.sec-content{
+	margin:0 45px;
+}
+.sec-title{
+	border-bottom:1px solid #ddd;
+}
+.sec-title h1{
+	margin-top:45px;
+}
+.sec-title p{
+	color:#969696;
+	margin-top:12px;
+	margin-bottom:7px;
+}
+.sec-title .button{
+	border-radius:5px;
+	padding:1px 10px;
+	margin-bottom:26px;
+}
+.sec-content{
+	padding-top:9px;
+	padding-top:9px;
+	height: 512px;
+	overflow-y:scroll;
+}
+.sec-content p{
+	margin-bottom:20px;
+}
+
+/*************病历卡*************/
+.box h2{
+	padding:8px 10px 8px 20px;
+}
+.huayan p,.zhibiao h3{
+	padding:10px 10px 10px 20px;
+}
+.basic h2 a{
+	float:right;
+	width:20px;
+	height:20px;
+	background:url(../images/basic.png) no-repeat;
+	position: relative;
+	top: 4px;
+}
+p.bs-content span{
+	margin-right:8px;
+}
+#yy-content p,#zb-content p{
+	margin:0 10px 0 20px;
+	padding:9px 0 9px 0;
+	border-bottom:1px solid #ddd;
+}
+#yy-content p:last-child,#zb-content>div p:last-child{
+	border-bottom:0;
+}
+.box h2,.zhibiao h3{
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	font-size:16px;
+}
+.zhibiao h3{
+	border-top:1px solid #ccc;
+}
+.zhibiao h3:first-child{
+	border-top:0;
+}
+
+.huayan h2 a{
+	color:#3ab4a6;
+	background:transparent;
+	display:block;
+	background:url(../images/upload.png) no-repeat right;
+}
+.basic h3{
+	color:#969696;
+	
+}
+.basic>div{
+	padding:14px 10px 14px 20px;
+	border-bottom:1px solid #ddd;
+}
+.zhibiao h3{
+	background:#ecf7f9;
+}
+#zb-content,#yy-content{
+	display:none;
+}
+#pre-text{
+	padding-top:29px;
+        background:transparent;
+        border:0;
+}
+#pre-text p{
+	margin-bottom:20px;
+}
+#zb-content h3 a{
+	background:url(../images/paper.png) no-repeat right;
+	height: 20px;
+	width: 20px;
+	position:relative;
+	top:3px;
+}
+#zb-content p{
+	background:url(../images/tongji.png) no-repeat right;
+}
+#zb-content p span{
+	display:inline-block;
+}
+#zb-content p span:first-child{
+	width:210px;
+}
+#zb-content p span:nth-child(2){
+	width:160px;
+}
+#zb-content p span:nth-child(3){
+	width:200px;
+}
+a.zb-note{
+	font-size:12px;
+	line-height:18px;
+	padding:0 3px;
+	margin:3px;
+	border-radius:5px;
+	background:#959595;
+	color:#fff;
+}
+a.zb-note:hover{
+	background:#3ab4a6;
+}
+a.zb-note,a.zb-edit{
+	display:none;
+}
+a.zb-edit{
+	width:26px;
+	height:26px;
+	background:url(../images/edit.png) no-repeat;
+}
+/*order menu*/
+span.order-by{
+	font-size:14px;
+	font-weight:normal;
+	padding-right:32px;
+	background:#fff url(../images/menu.png) no-repeat right;
+	position:relative;
+	z-index:3;
+	cursor:pointer;
+}
+#order-menu{
+	position: absolute;
+	background: #fff;
+	border: 3px solid rgba(0,0,0,.6);
+	border-radius: 3px;
+	cursor:pointer;
+	display:none;
+	z-index:3;
+}
+#order-menu li{
+	border-bottom: 1px solid #ddd;
+	padding: 7px 20px;
+}
+#order-menu a{
+	font-size: 14px;
+}
+/*del paper form*/
+.paper-form{
+	width:425px;
+	height:130px;
+	padding:25px 15px;
+	background:#fff;
+	position:absolute;
+	z-index:6;
+	border:5px solid rgba(0,0,0,.6);
+	display:none;
+}
+.paper-form h2{
+	font-size:18px;
+	font-weight:bold;
+}
+/*edit zb form*/
+.zb-edit-form{
+	width:365px;
+	height:140px;
+	background:#fff;
+	position:absolute;
+	z-index:3;
+	border:3px solid rgba(0,0,0,.6);
+	display:none;
+}
+a.close{
+	background: rgba(0,0,0,.6);
+	float: right;
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	border-radius: 15px;
+}
+.zb-edit-form .input,.paper-form .input{
+	height:38px;
+	border-radius:0;
+}
+.zb-edit-form .input.text{
+	width:186px;
+	border:1px solid #ccc;
+	margin-left:28px;
+	margin-top:20px;
+}
+.paper-form .input.password,.paper-form .input.url,.paper-form .input.upload{
+	width:313px;
+	border:1px solid #ccc;
+	padding:0 10px;
+	margin-top:5px;
+}
+
+.zb-edit-form .input.submit,.paper-form .input.submit{
+	width:95px;
+	height:40px;
+	border:0;
+	background:#3ab4a6;
+	color:#fff;
+	position:relative;
+	top:-1px;
+}
+.paper-form .input.submit{
+	width:65px;
+}
+.edit-info{
+    padding:20px 28px;
+}
+.edit-info input{
+    float:left;
+    
+}
+.edit-info label{
+      display:inline-block;
+      float:left;
+         width:280px;
+         font-size:14px;
+         line-height:1.5em;
+         margin-left:6px;
+      text-indent:0;
+}
+input[type=checkbox]{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+  background: url(../images/unchecked.png) no-repeat;
+  position: relative;
+  }
+  input[type=checkbox]:checked::after {
+  content: url(../images/checked.png);
+  display: block;
+  }
+
+/***************指标名片******************/
+#name-card{
+	width:700px;
+	height:410px;
+	border:5px solid rgba(0,0,0,.6);
+	border-radius:5px;
+	position:absolute;
+	background:#fff;
+	z-index:5;
+	display:none;
+}
+.name-card .sec-title, .name-card .sec-content {
+margin: 0 25px;
+}
+.rel-qa{
+	width:300px;
+	height:410px;
+}
+.rel-qa .intro{
+	padding-bottom: 3px;
+	padding-top: 5px;
+}
+
+.rel-qa #ques{
+	height: 350px;
+}
+
+.rel-qa h2{
+	border-bottom:1px solid #ccc;
+	height: 52px;
+	line-height: 52px;
+	padding-left:20px;
+	color:#08c;
+}
+.rel-qa .ques-title {
+	padding: 17px 0 11px 0;
+}
+.name-card{
+	width:399px;
+	height:410px;
+	border-left:1px solid #ccc;
+}
+.name-card h2{
+	height: 49px;
+	padding-top: 27px;
+	font-size: 20px;
+}
+.name-card .sec-content{
+	height:314px;
+}
+
+/***************化验单*****************/
+#hy-paper{
+	background:#fff;
+	width:0;
+	overflow-y:hidden;
+	margin-top:0;
+	position:absolute;
+	top:60px;
+	z-index:5;
+}
+.paper-actions{
+	height:49px;
+	padding:48px 35px;
+	border-bottom:1px solid #ddd;
+}
+.slide-left{
+	width:50%;
+	height:49px;
+	background:url(../images/back.png) no-repeat;
+}
+.zoom-in,.zoom-out{
+	width:88px;
+	height:40px;
+	margin-top:2px;
+	display:inline-block;
+	float:right;
+	background:url(../images/changesize.png) no-repeat;
+}
+.zoom-in{
+	background-position:0 0;
+}
+.zoom-out{
+	background-position:-88px 0;
+}
+#paper-img{
+	height:405px;
+	overflow-x:scroll;
+	cursor:move;
+	background:#f5f5f5;
+	border-bottom:1px solid #ccc;
+}
+
+#paper-img::-webkit-scrollbar {
+    width: 0;
+    height:0;
+}
+
+.del-paper{
+	font-size: 14px;
+	background: #efa687;
+	color: #fff;
+	padding: 5px 16px;
+	border-radius: 5px;
+	margin-top:50px;
+	margin-right:20px;
+} 
+/******上传化验单******/
+.upload.local{
+	height:300px;
+}
+.paper-form.upload{
+	padding:15px 15px 0;
+}
+.upload-way a{
+	color:#3ab4a6;
+}
+.input.upload{
+	background:#3ab4a6;
+	color:#fff;
+	width:9em !important;
+	cursor:pointer;
+}
+.input.file{
+	position: absolute;
+	left: 17px;
+	top: 74px;
+	width:9em;
+	opacity:0;
+}
