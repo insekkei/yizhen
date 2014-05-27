@@ -276,8 +276,8 @@ a.close{
 }
 .paper-form .input.password,.paper-form .input.url,.paper-form .input.upload{
 	width:313px;
-	border:1px solid #ccc;
-	padding:0 10px;
+	border:1px solid #3ab4a6;
+	padding:0 14px;
 	margin-top:5px;
 }
 
@@ -434,7 +434,7 @@ margin: 0 25px;
 } 
 /******上传化验单******/
 .upload.local{
-	height:300px;
+	height:310px;
 }
 .paper-form.upload{
 	padding:15px 15px 0;
@@ -454,4 +454,11 @@ margin: 0 25px;
 	top: 74px;
 	width:9em;
 	opacity:0;
+}
+#ImgPr{
+	width:136px;
+	height:136px;
+	margin-top: 10px;
+	margin-right: 5px;
+	background:#f5f5f5;
 }

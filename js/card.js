@@ -105,11 +105,6 @@ $(document).ready(function(){
 		var $uploadForm = $('.paper-form.local');
 		$uploadForm.fadeIn(300);
 	});
-
-	 $(".input.file").change(function(){
-		var a = getPath($('.input.file'));
-                alert(a);
-        })
 	
 	//上传方式切换
 	$('#pt-url').click(function(e){
@@ -122,6 +117,7 @@ $(document).ready(function(){
 		$('#upload-url').fadeOut(0);
 		$('#upload-local').fadeIn(300)
 	});
+
 })
 var   winWidth = $(window).width(),
      winHeight = $(window).height();
