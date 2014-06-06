@@ -1,3 +1,6 @@
+var   winWidth = $(window).width(),
+     winHeight = $(window).height();
+var $time = $('#yy-content p span:nth-child(2)');
 $(document).ready(function(){
 	//点击“指标”“用药情况”出现详细内容，预置文本消失
 	$('.yongyao h2').click(function(e){
@@ -8,6 +11,11 @@ $(document).ready(function(){
 		$('#zb-content').fadeIn(300);
 		$('#pre-text').fadeOut(0);
 	});
+
+	//用药情况绿色横条
+	$time.addClass('time');
+	initTime();
+
 	//鼠标划过指标行，显示编辑和关注按钮
 	$('#zb-content p').mouseover(function(e){
 		$(this).find('a').fadeIn(0);
@@ -118,20 +126,43 @@ $(document).ready(function(){
 		$('#upload-local').fadeIn(300)
 	});
 
-})
-var   winWidth = $(window).width(),
-     winHeight = $(window).height();
+	//指标图表
+	$('#zb-content p').append('<span><img src="./images/tongji.png"></span>');
+	$('#zb-content p span:last-child img').click(function(e){
+		$('.zb-chart').fadeIn(300);
+		initChart();
+	});
+});
+
+function initTime(){
+	var a0 = Date.parse('2008-05-01'),
+	    a1 = Date.parse('2009-12-01'),
+	    b0 = Date.parse('2008-12-01'),
+	    b1 = Date.parse('2010-12-01'),
+	    c0 = Date.parse('2010-10-01'),
+	    c1 = Date.parse('2013-12-01');
+	//时间段长度，单位为分钟
+	var aTime = (a1-a0)/10000/36000,
+	    bTime = (b1-b0)/10000/36000,
+	    cTime = (c1-c0)/10000/36000;
+
+	$('#yy-content p:eq(0) .time').css('width',aTime);
+	$('#yy-content p:eq(1) .time').css({'width':bTime,'left':aTime});
+	$('#yy-content p:eq(2) .time').css({'width':cTime,'left':aTime+bTime});
+	//$time.get(0).style.width = aTime;
+
+}
 function setPos(){
 	var  left =  (winWidth-710)/2,
 	      top =  (winHeight-420)/2;
 
 	if(top>10){
-		$('#name-card').css({
+		$('#name-card,.zb-chart').css({
 		  'left':left+'px',
 		  'top':top+'px'
 		});
 	}else{
-		$('#name-card').css({
+		$('#name-card,.zb-chart').css({
 		  'left':left,
 		  'top':10+'px'
 		});
@@ -163,3 +194,19 @@ function getPath(obj) {
 		return obj.value;
 	}
 }  
+function initChart(){
+	var line1=[['2013-12-01 8:00AM',70], ['2014-01-01 8:00AM',20], ['2014-02-01 8:00AM',30], ['2014-03-01 8:00AM',40], ['2014-04-01 8:00AM',40], ['2014-05-01 8:00AM',30], ['2014-06-01 8:00AM',50]];
+	var plot2 = $.jqplot('chart', [line1], {
+	      title:'Customized Date Axis', 
+	      axes:{
+	        xaxis:{
+	          renderer:$.jqplot.DateAxisRenderer, 
+	          tickOptions:{formatString:'%b %#d, %#I %p'},
+	          min:'11 16, 2013 8:00AM', 
+	          tickInterval:'1 months'
+	        }
+	      },
+	      series:[{lineWidth:4, markerOptions:{style:'square'}}]
+	});
+}
+

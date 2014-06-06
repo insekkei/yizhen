@@ -8,8 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" href="css/kalendae.css" type="text/css" charset="utf-8">
-<script src="js/kalendae.standalone.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/kalendae.css">
+<link rel="stylesheet" type="text/css" hrf="css/jquery.jqplot.min.css" />
+<script src="js/kalendae.standalone.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="header">
@@ -49,9 +50,9 @@
 	<div class="box big yongyao">
 		<h2>用药情况</h2>
 		<div id="yy-content">
-		  <p><span>恩替卡韦</span></p>
-		  <p><span>贺维力</span></p>
-		  <p><span>派罗欣</span></p>
+		  <p><span>恩替卡韦</span><span></span></p>
+		  <p><span>贺维力</span><span></span></p>
+		  <p><span>派罗欣</span><span></span></p>
 		</div>
 	</div>
 	<div class="box big zhibiao">
@@ -189,7 +190,12 @@
 	<input type="button" class="input submit fr" value="确认">
     </div>
 </form>
-
+<!-- 指标chart -->
+<div class="box zb-chart">
+	<a class="close" href="#">&times;</a>
+	
+	<div id="chart"></div>
+</div>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/card.js"></script>
@@ -199,5 +205,8 @@ $(function () {
 	$("#up").uploadPreview({ Img: "ImgPr", Width: 136, Height: 136 });
 });
 </script>
+<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="js/jqplot.dateAxisRenderer.min.js"></script>
+
 </body>
 </html>
