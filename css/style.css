@@ -97,33 +97,60 @@ form input[type="text"]{
 .huayan p,.zhibiao h3{
 	padding:10px 10px 10px 20px;
 }
-.basic h2 a{
-	float:right;
+.basic h3 a{
 	width:20px;
 	height:20px;
 	background:url(../images/basic.png) no-repeat;
 	position: relative;
 	top: 4px;
+	display:none;
 }
 p.bs-content span{
 	margin-right:8px;
 }
-#yy-content p,#zb-content p{
+.yongyao h2 a{
+	width:20px;
+	height:20px;
+	background:url(../images/edit.png) no-repeat;
+}
+.yongyao.edit h2 a{
+	width: auto;
+	background: none;
+	color: #3ab4a6;
+}
+#yy-content p,#zb-content p,#yy-edit p{
 	margin:0 10px 0 20px;
 	padding:9px 0 9px 0;
 	border-bottom:1px solid #ddd;
 }
+.yongyao.edit{
+	background:#fff;
+	position:absolute;
+	width: 628px;
+	top: 71px;
+	border: 1px solid #ccc;
+	display:none;
+}
+#yy-edit select{
+	background:#fff;
+	border:1px solid #ccc;
+	height: 21px;
+}
 #yy-content p{
     overflow-x:hidden;
 }
-#yy-content p:last-child,#zb-content>div p:last-child{
+#yy-content p:last-child,#zb-content>div p:last-child,#yy-edit p:last-child{
 	border-bottom:0;
 }
-#yy-content p span{
+#yy-content p span,#yy-edit p span{
 	display:inline-block;
 }
 #yy-content p span:first-child{
 	width:100px;
+}
+#yy-edit p span:first-child{
+	width: 130px;
+	margin-right: 10px;
 }
 #yy-content p span:nth-child(2){
 	background:#3ab4a6;
@@ -244,15 +271,19 @@ span.order-by{
 #order-menu a{
 	font-size: 14px;
 }
+/*浮层抽像样式*/
+.overlay{
+	border:5px solid rgba(0,0,0,.6);
+	border-radius:5px;
+	position:absolute;
+	background:#fff;
+	z-index:5;
+}
 /*del paper form*/
 .paper-form{
 	width:425px;
 	height:130px;
 	padding:25px 15px;
-	background:#fff;
-	position:absolute;
-	z-index:6;
-	border:5px solid rgba(0,0,0,.6);
 	display:none;
 }
 .paper-form h2{
@@ -263,12 +294,9 @@ span.order-by{
 .zb-edit-form{
 	width:365px;
 	height:140px;
-	background:#fff;
-	position:absolute;
-	z-index:3;
-	border:3px solid rgba(0,0,0,.6);
 	display:none;
 }
+
 a.close{
 	background: rgba(0,0,0,.6);
 	float: right;
@@ -284,6 +312,18 @@ a.close{
 	color: #fff;
 	border-radius: 15px;
 }
+a.del{
+	float: right;
+	background: rgba(0,0,0,.4);
+	width: 13px;
+	height: 13px;
+	line-height: 15px;
+	text-align: center;
+	border-radius: 15px;
+	color: #fff;
+	position: relative;
+	top: 7px;
+}
 .zb-edit-form .input,.paper-form .input{
 	height:38px;
 	border-radius:0;
@@ -296,12 +336,12 @@ a.close{
 }
 .paper-form .input.password,.paper-form .input.url,.paper-form .input.upload{
 	width:313px;
-	border:1px solid #3ab4a6;
+	border:1px solid #ddd;
 	padding:0 14px;
 	margin-top:5px;
 }
 
-.zb-edit-form .input.submit,.paper-form .input.submit{
+.zb-edit-form .input.submit,.paper-form .input.submit,.form-actions .input{
 	width:95px;
 	height:40px;
 	border:0;
@@ -313,6 +353,13 @@ a.close{
 .paper-form .input.submit{
 	width:65px;
 }
+.form-actions .input{
+	width:85px;
+	margin-left:5px;
+}
+.form-actions .input.cancel{
+	background:#bbb;
+}
 .edit-info{
     padding:20px 28px;
 }
@@ -323,37 +370,33 @@ a.close{
 .edit-info label{
       display:inline-block;
       float:left;
-         width:280px;
-         font-size:14px;
-         line-height:1.5em;
-         margin-left:6px;
+      width:280px;
+      font-size:14px;
+      line-height:1.5em;
+      margin-left:6px;
       text-indent:0;
 }
 input[type=checkbox]{
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  cursor: pointer;
-  vertical-align: bottom;
-  background: url(../images/unchecked.png) no-repeat;
-  position: relative;
-  }
-  input[type=checkbox]:checked::after {
-  content: url(../images/checked.png);
-  display: block;
-  }
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	cursor: pointer;
+	vertical-align: bottom;
+	background: url(../images/unchecked.png) no-repeat;
+	position: relative;
+}
+input[type=checkbox]:checked::after {
+	content: url(../images/checked.png);
+	display: block;
+}
 
 /***************指标名片******************/
+
 #name-card{
 	width:700px;
 	height:410px;
-	border:5px solid rgba(0,0,0,.6);
-	border-radius:5px;
-	position:absolute;
-	background:#fff;
-	z-index:5;
 	display:none;
 }
 .name-card .sec-title, .name-card .sec-content {
@@ -452,6 +495,54 @@ margin: 0 25px;
 	margin-top:50px;
 	margin-right:20px;
 } 
+
+/****************编辑基本情况*****************/
+.edit-basic{
+	width:630px;
+	height:390px;
+	display:none;
+}
+.edit-basic form{
+	display:none;
+}
+.edit-basic form h2{
+	text-align:center;
+	border-bottom:1px solid #ccc;
+	height:42px;
+	line-height:42px;
+	font-weight:bold;
+}
+.form-content{
+	height:286px;
+	font-size:14px;
+}
+.form-content .box{
+	border:0;
+	margin:0;
+	width:310px;
+	height:100%;
+}
+.form-content .box:first-child{
+	border-right:1px solid #ccc;
+}
+.form-content .box p{
+        padding-left:20px;
+        line-height:45px;
+}
+.form-content .box p input{
+        position:relative;
+        top:-12px;
+}
+.form-content .box p label{
+        position:relative;
+        left:8px;
+}
+.form-actions{
+	height:40px;
+	padding:10px 30px;
+	border-top:1px solid #ccc;
+}
+
 /******上传化验单******/
 .upload.local{
 	height:310px;
@@ -484,11 +575,7 @@ margin: 0 25px;
 }
 /**指标chart**/
 .zb-chart{
-	position:absolute;
-	z-index:100;
 	width:630px;
 	height:390px;
-	border:5px solid rgba(0,0,0,.6);
-	border-radius:5px;
 	display:none;
 }

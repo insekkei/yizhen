@@ -13,17 +13,20 @@
 <script src="js/kalendae.standalone.js" type="text/javascript"></script>
 </head>
 <body>
+<!-- header -->
 <div class="header">
   <div class="wrap clearfix">
-	<img class="logo fl" src="images/logo-new.png">
+	<a href="/"><img class="logo fl" src="images/logo-new.png"></a>
 	<ul class="nav-menu fr">
 		<li class="fl"><a href="qa.html">问答库</a></li>
 		<li class="fl current"><a href="card.html">病历卡</a></li>
 		<li class="fl"><a href=""><img src="">萍萍妈</a></li>
 	</ul>	
   </div>
-</div>
+</div><!-- header over -->
+<!-- wrap -->
 <div class="wrap clearfix">
+  <!-- leftbox -->
   <div class="fl left">
 	<div class="auto-kal box small cal"><!-- 日历 --></div>
 	<div class="box small huayan">
@@ -31,30 +34,55 @@
 		<p class="fs14">1张化验单正在识别中...</p>
 	</div>
 	<div class="box small basic">
-		<h2 class="clearfix">基本情况<a href="" class="fr" title="编辑基本情况"></a></h2>
+		<h2 class="clearfix">基本情况</h2>
 		<div class="fs14">
-		  <h3>当前确认疾病</h3>
+		  <h3>当前确认疾病<a href="" class="fr" rel="cur-form" title="编辑基本情况"></a></h3>
 		  <p class="bs-content"><span>慢性病笃益行肝炎</span><span>肝硬化</span></p>
 		</div>
 		<div class="fs14">
-		  <h3>病史</h3>
+		  <h3>病史<a href="" class="fr" rel="his-form" title="编辑基本情况"></a></h3>
 		  <p class="bs-content"><span>慢性病笃益行肝炎</span><span>肝硬化</span></p>
 		</div>
 		<div class="fs14">
-		  <h3>病毒基因型</h3>
+		  <h3>病毒基因型<a href="" class="fr" rel="dna-form" title="编辑基本情况"></a></h3>
 		  <p class="bs-content"><span>慢性病肝炎C型</span><span>肝硬化</span></p>
 		</div>
 	</div>
-  </div>
+  </div> <!-- leftbox over -->
+  <!-- right main box -->
   <div class="fl main">
+	<!-- 用药历史 -->
 	<div class="box big yongyao">
-		<h2>用药情况</h2>
+		<h2 class="clearfix">用药情况<a class="fr" href="#"></a></h2>
 		<div id="yy-content">
 		  <p><span>恩替卡韦</span><span></span></p>
 		  <p><span>贺维力</span><span></span></p>
 		  <p><span>派罗欣</span><span></span></p>
 		</div>
-	</div>
+	</div><!-- 用药历史over -->
+
+	<!-- 编辑用药历史 -->
+	<div class="box big yongyao edit">
+		<h2 class="clearfix">用药情况<a class="fr" id="yy-save" href="#">保存</a></h2>
+		<form id="yy-edit">
+			  <p>
+				<span>恩替卡韦<a class="del" href="#">&times</a></span>
+				<label>开始时间</label><select></select><label>年</label><select></select><label>月</label>
+				<label>停药时间</label><select></select><label>年</label><select></select><label>月</label>
+			  </p>
+			  <p>
+				<span>恩替卡韦<a class="del" href="#">&times</a></span>
+				<label>开始时间</label><select></select><label>年</label><select></select><label>月</label>
+				<label>停药时间</label><select></select><label>年</label><select></select><label>月</label>
+			  </p>
+			  <p>
+				<span>恩替卡韦<a class="del" href="#">&times</a></span>
+				<label>开始时间</label><select></select><label>年</label><select></select><label>月</label>
+				<label>停药时间</label><select></select><label>年</label><select></select><label>月</label>
+			  </p>
+		</form>
+	</div><!-- 编辑用药历史over -->
+	<!-- 指标 -->
 	<div class="box big zhibiao">
 		<h2 class="clearfix">指标<span class="order-by fr">按化验单排列</span></h2>
 		<ul id="order-menu">
@@ -78,7 +106,8 @@
 			  <p><span>直接胆红素</span><span>78.0</span><span>10-100IU/L</span></p>
 			</div>
 		</div>
-	</div>
+	</div><!-- 指标over -->
+	<!-- 预置文本 -->
 	<div class="box big fs14" id="pre-text">
 		<p>“易诊”是一个多平台智能健康管理随访和个性化医学信息推送App。 </p><p>
 我们正在开发的App所针对的初步人群是长期患有慢性疾病、传染性疾病等其他内科疾病的患者和他们自己的主治医师，这个产品将会是一个很聪明的“内科疾病跟踪秘书”，它只需要患者按下“快门”，就能自动电子化体检报告/化验单上的所有数据并同步到云端；此外，它能够形成可视化的医学指标随访曲线，让患者一方面记录好自己健康数据随时间的动态变化，另一方面可以更便捷、更正确地与医生（线上或线下）沟通自己的病史，从而增加诊断效率。 </p><p>
@@ -86,12 +115,12 @@
 它的聪明之处还在于一旦它收到患者或者相关亚健康人群（将会扩充到的外衍人群）的数据，它能实时为用户找到与自己相似的患者（或亚健康人群），以及他们同时在关注的信息（包括临床治疗信息、药品信息、看病指南、病友关注的生活工作饮食方面的问题），在用户学会疾病自我量化管理的基础上逐渐形成一个规范的病友社区。 </p><p>
 
 此App同时也有医生端，它将会成为一个为医生管理、分类、统计科研储备数据的CRM（让医生把时间可以安心放在临床看病，科研上可以少花些不必要人力和财力）。</p>
-	</div>
-  </div>
-</div>
+	</div><!-- 预置文本over -->
+  </div><!-- right main box over -->
+</div><!-- wrap over -->
 
 <!-- zb-edit form -->
-<form class="zb-edit-form" action="">
+<form class="overlay zb-edit-form" action="">
     <a class="close" href="#">&times;</a>
     <input class="input text" id="edit-input" type="text" name="zb-value">
     <input class="input submit" type="submit" value="完成">
@@ -101,7 +130,7 @@
     </div>
 </form>
 <!-- 指标名片 -->
-<div id="name-card">
+<div id="name-card" class="overlay">
     <a class="close" href="#">&times;</a>
     <div class="fl rel-qa">
 	<h2>r-谷氨酰转肽酶的含义</h2>
@@ -143,7 +172,7 @@
 对HBeAg阴性慢性乙型肝炎患者（60%为亚洲人），用PegIFNα-2a治疗48周，停药后随访24周时HBV-DNA﹤104拷贝/ml（相当于2000IU/ml）的患者为43%，停药后随访48周时为42%；HBsAg消失率在停药随访24周时为3%，停药随访至3年时增加至8%。</p>
 	  </div>
     </div>
-</div><!-- name-card--over -->
+</div><!--- 指标名片 --over -->
 <!-- 化验单 -->
 <div class="box flearfix" id="hy-paper">
 	<div class="paper-actions">
@@ -154,9 +183,9 @@
 		<img src="images/paper.jpg">
 	</div>
 	<a class="dib danger del-paper fr" href="">删除</a>
-</div>
+</div><!-- 化验单over -->
 <!-- 删除化验单框 -->
-<form class="paper-form del" action="">
+<form class="overlay paper-form del" action="">
     <a class="close" href="#">&times;</a>
     <div class="del-info">
 	<h2>将要删除这张化验单</h2>
@@ -164,10 +193,10 @@
     </div>
     <input class="input password" id="del-input" type="password" placeholder="输入密码" name="del-input">
     <input class="input submit" type="submit" value="删除">
-</form>
+</form><!-- 删除化验单框over -->
 
 <!-- 上传文件/网址上传 -->
-<form class="paper-form upload url" id="upload-url" action="">
+<form class="overlay paper-form upload url" id="upload-url" action="">
     <a class="close" href="#">&times;</a>
     <div class="upload-info">
 	<h2>上传化验单</h2>
@@ -175,9 +204,9 @@
     </div>
     <input class="input url" id="upload-url" type="text" placeholder="http://" name="upload-url">
     <input class="input submit" type="submit" value="上传">
-</form>
+</form><!-- 上传文件/网址上传 over-->
 <!-- 上传文件/本地上传 -->
-<form class="paper-form upload local" id="upload-local" action="">
+<form class="overlay paper-form upload local" id="upload-local" action="">
     <a class="close" href="#">&times;</a>
     <div class="upload-info">
 	<h2>上传化验单</h2>
@@ -189,13 +218,73 @@
     <div class="clearfix">
 	<input type="button" class="input submit fr" value="确认">
     </div>
-</form>
+</form><!-- 上传文件/本地上传over -->
 <!-- 指标chart -->
-<div class="box zb-chart">
+<div class="overlay zb-chart">
 	<a class="close" href="#">&times;</a>
-	
 	<div id="chart"></div>
-</div>
+</div><!-- 指标chart over-->
+<!--编辑基本情况-->
+<div class="overlay edit-basic">
+  <a class="close" href="#">&times;</a>
+  <!-- 当前确诊疾病 -->
+  <form id="cur-form">
+	<h2>当前确诊疾病（可多选）</h2>
+	<div class="form-content  clearfix">
+		<div class="box fl">
+			<p><input type="checkbox"><label>甲型肝炎</label></p>
+			<p><input type="checkbox"><label>乙型肝炎</label></p>
+			<p><input type="checkbox"><label>丙型肝炎</label></p>
+			<p><input type="checkbox"><label>丁型肝炎</label></p>
+		</div>
+		<div class="box fl">
+			<p><input type="checkbox"><label>其它</label></p>
+		</div>
+	</div>
+	<div class="form-actions clearfix">
+		<input type="button" class="input submit fr" value="确定">
+		<input type="button" class="input cancel fr" value="取消">
+	</div>
+  </form>
+  <!-- 病史 -->
+  <form id="his-form">
+	<h2>病史</h2>
+	<div class="form-content  clearfix">
+		<div class="box fl">
+			<p><input type="checkbox"><label>甲型肝炎</label></p>
+			<p><input type="checkbox"><label>乙型肝炎</label></p>
+			<p><input type="checkbox"><label>丙型肝炎</label></p>
+			<p><input type="checkbox"><label>丁型肝炎</label></p>
+		</div>
+		<div class="box fl">
+			<p><input type="checkbox"><label>其它</label></p>
+		</div>
+	</div>
+	<div class="form-actions clearfix">
+		<input type="button" class="input submit fr" value="确定">
+		<input type="button" class="input cancel fr" value="取消">
+	</div>
+  </form>
+  <!-- 病毒基因型 -->
+  <form id="dna-form">
+	<h2>病毒基因型</h2>
+	<div class="form-content  clearfix">
+		<div class="box fl">
+			<p><input type="checkbox"><label>甲型肝炎</label></p>
+			<p><input type="checkbox"><label>乙型肝炎</label></p>
+			<p><input type="checkbox"><label>丙型肝炎</label></p>
+			<p><input type="checkbox"><label>丁型肝炎</label></p>
+		</div>
+		<div class="box fl">
+			<p><input type="checkbox"><label>其它</label></p>
+		</div>
+	</div>
+	<div class="form-actions clearfix">
+		<input type="button" class="input submit fr" value="确定">
+		<input type="button" class="input cancel fr" value="取消">
+	</div>
+  </form>
+</div><!--编辑基本情况over-->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/card.js"></script>
